@@ -23,9 +23,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Deploy to S3
-        run: |
-          aws s3 sync ./* s3://mi-bucket-para-la-prueba ./* --acl public-read || { echo "Error: Failed to deploy to S3"; exit 1; }
+      - name: Sync files S3
+        run: aws s3 sync . s3://mi-bucket-para-la-prueba --delete --exclude ".git/*" --exclude ".github/*"
 
       - name: Invalidate CloudFront cache
         run: |
