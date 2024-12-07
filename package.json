@@ -2,9 +2,9 @@
   "name": "prueba-s3-cloudfront-githubactions",
   "version": "1.0.0",
   "description": "Prueba de S3, CloudFront y GitHub Actions",
-  "main": "src/app.js",
+  "main": "index.html",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build"
   },
