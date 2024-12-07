@@ -25,7 +25,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./dist/ s3://${{ secrets.AWS_BUCKET_NAME}} --acl public-read || { echo "Error: Failed to deploy to S3"; exit 1; }
+          aws s3 sync ./ s3://${{ secrets.AWS_BUCKET_NAME}} --acl public-read || { echo "Error: Failed to deploy to S3"; exit 1; }
 
       - name: Invalidate CloudFront cache
         run: |
